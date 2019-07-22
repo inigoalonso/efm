@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EF-M Modeller</title>
+  <base target="_self">
+  <meta name="description" content="This is a test" />
+  <meta name="google" value="notranslate">
+
+
+  <!--stylesheets / link tags loaded here-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <style type="text/css">
+    html {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      padding-top: 4.5rem;
+    }
+
+    /* fixed and fluid only on sm and up */
+    @media (min-width: 768px) {
+      .fixed {
+        flex: 0 0 200px;
+        min-height: 100vh;
+        min-width: 240px;
+      }
+
+      .col .fluid {
+        min-height: 100vh;
+      }
+
+      .flex-grow {
+        flex: 1;
+      }
+    }
+  </style>
+  <!-- Sets the basepath for the mxgraph library if not in same directory -->
+  <script type="text/javascript">
+    mxBasePath = 'https://jgraph.github.io/mxgraph/javascript/src';
+  </script>
+
+  <!-- Loads and initializes the mxgraph library -->
+  <script type="text/javascript" src="https://jgraph.github.io/mxgraph/javascript/src/js/mxClient.js"></script>
+
+
+</head>
+
+{{ content }}
+
+</html>
