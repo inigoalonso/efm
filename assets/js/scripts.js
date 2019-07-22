@@ -104,9 +104,9 @@
                     });
                 };
 
-                addVertex('assets/img/rectangle.gif', 100, 60, 'rounded=0;fillColor=#FFF26D;strokeColor=#FFC928');
-                addVertex('assets/img/rounded.gif', 100, 60, 'rounded=1;fillColor=#4286F4;strokeColor=#2E6CD1');
-                addVertex('assets/img/rectangle.gif', 100, 60, 'rounded=0;fillColor=#EEEEEE;strokeColor=#333333');
+                addVertex('assets/img/ds.gif', 100, 60, 'rounded=0;fillColor=#FFF26D;strokeColor=#FFC928');
+                addVertex('assets/img/fr.gif', 100, 60, 'rounded=1;fillColor=#4286F4;strokeColor=#2E6CD1');
+                addVertex('assets/img/cc.gif', 100, 60, 'rounded=0;fillColor=#EEEEEE;strokeColor=#333333');
 
                 // Adds an option to view the XML of the graph
                 document.getElementById("modelOptions").appendChild(mxUtils.button('View XML', function () {
