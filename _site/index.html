@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EF-M Modeller</title>
   <base target="_self">
-  <meta name="description" content="This is a test" />
+  <meta name="description" content="Enhanced Function-Means modeller tool from the System Engineering Design group at Chalmers Technical University" />
   <meta name="google" value="notranslate">
 
 
@@ -14,32 +14,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
 
-  <style type="text/css">
-    html {
-      height: 100%;
-    }
-
-    body {
-      min-height: 100vh;
-      padding-top: 4.5rem;
-    }
-
-    /* fixed and fluid only on sm and up */
-    @media (min-width: 768px) {
-      .fixed {
-        flex: 0 0 200px;
-        min-height: 100vh;
-        min-width: 240px;
-      }
-
-      .col .fluid {
-        min-height: 100vh;
-      }
-
-      .flex-grow {
-        flex: 1;
-      }
-    }
+  <link rel="stylesheet" href="assets/css/main.css" />
   </style>
   <!-- Sets the basepath for the mxgraph library if not in same directory -->
   <script type="text/javascript">
@@ -53,43 +28,62 @@
 </head>
 
 <body onload="main(document.getElementById('graphContainer'))">
-
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-        <a class="navbar-brand" href="#">EF-M Modeller</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="p-2 text-dark" data-toggle="modal" title="About" href="#aboutModal">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="p-2 text-dark" data-toggle="modal" title="XML" href="#xmlModal">xml</a>
-                </li>
-            </ul>
-            <a class="btn btn-outline-primary" data-toggle="modal" title="Sign up" href="#signUpModal">Sign up</a>
-
-        </div>
-    </nav>
+    <!-- main -->
     <main role="main" class="container-fluid ">
-
-
-
+        <div class="row">
+            <!-- top nav bar -->
+            <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top">
+                <a class="navbar-brand" href="#">EF-M Modeller</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" title="About" href="#aboutModal">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" title="XML" href="#xmlModal">xml</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- /top nav bar -->
+        </div>
         <div class="row">
             <!-- center content -->
-            <div class="col fluid d-flex flex-column p-0">
+            <div class="col-md-9 col-sm-6 fluid d-flex flex-column">
                 <!-- main content -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="graphContainer-tab" data-toggle="tab" href="#graphContainer"
+                            role="tab" aria-controls="graphContainer" aria-selected="true">Graph</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab"
+                            aria-controls="other" aria-selected="false">Profile</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="graphContainer" role="tabpanel"
+                        aria-labelledby="graphContainer-tab">
+                    </div>
+                    <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">Something else
+                    </div>
+                </div>
+                <!--
                 <div id="graphContainer" class="flex-grow">
 
                 </div>
+                -->
                 <!-- /main content -->
 
             </div>
+            <!-- /center content -->
 
             <!-- right sidebar -->
-            <div class="col-md-3 fixed py-3 bg-light">
+            <div class="col-md-3 col-sm-6 fixed bg-light">
                 <div id="outline" class="card card-body mb-4 border-0">
                     <div class="card-header" id="headingOutline">
                         <h2 class="mb-0">
@@ -111,17 +105,17 @@
                     <div id="propertiesContainer">
                         <table class="table table-sm">
 
-  <tbody>
-    <tr>
-      <th scope="row">Name</th>
-      <td>DS1</td>
-    </tr>
-    <tr>
-      <th scope="row">Description</th>
-      <td>This is the description of the DS1 design solution</td>
-    </tr>
-  </tbody>
-</table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Name</th>
+                                    <td>DS1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description</th>
+                                    <td>This is the description of the DS1 design solution</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div id="modelOptions" class="card card-body mb-4 border-0">
@@ -130,9 +124,12 @@
                     <input type="checkbox" id="vertical" /> Vertical
                 </div>
             </div>
+            <!-- /right sidebar -->
         </div>
     </main>
-    </div>
+    <!-- /main -->
+
+    <!-- about modal -->
     <div id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -150,24 +147,9 @@
             </div>
         </div>
     </div>
-    <div id="signUpModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Sign up</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>We are not yet open for business :(</p>
-                    <p>Please come back later.</p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- /about modal -->
+
+    <!-- xml modal -->
     <div id="xmlModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -183,8 +165,11 @@
             </div>
         </div>
     </div>
+    <!-- /xml modal -->
+
     <!-- Modeller Code scripts loaded here-->
     <script src="assets/js/scripts.js"></script>
+
     <!-- Bootstrap scripts loaded here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
