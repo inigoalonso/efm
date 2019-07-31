@@ -5,46 +5,77 @@ nav-area: home
 ---
 
 <body onload="main(document.getElementById('graphContainer'))">
+
+    <div class="row">
+        <!-- top nav bar -->
+        <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top">
+            <a class="navbar-brand" href="#">{{ page.title }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Options
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <form class="px-4 py-3">
+                                <h6 class="dropdown-header">Options</h6>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="animate" checked="checked">
+                                        <label class="form-check-label" for="animate">
+                                            Animate transtitions
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="vertical">
+                                        <label class="form-check-label" for="vertical">
+                                            Vertical
+                                        </label>
+                                    </div>
+                                    <div id="modelOptions">
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" title="XML" href="#xmlModal">XML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" title="About" href="#aboutModal">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /top nav bar -->
+    </div>
     <!-- main -->
     <main role="main" class="container-fluid ">
-        <div class="row">
-            <!-- top nav bar -->
-            <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top">
-                <a class="navbar-brand" href="#">{{ page.title }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" title="About" href="#aboutModal">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" title="XML" href="#xmlModal">xml</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- /top nav bar -->
-        </div>
         <div class="row">
             <!-- center content -->
             <div class="col-md-9 col-sm-6 fluid d-flex flex-column">
                 <!-- main content -->
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="graphContainer-tab" data-toggle="tab" href="#graphContainer"
-                            role="tab" aria-controls="graphContainer" aria-selected="true">Graph</a>
+                        <a class="nav-link active" id="model-tab" data-toggle="tab" href="#model"
+                            role="tab" aria-controls="model" aria-selected="true">Graph</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab"
-                            aria-controls="other" aria-selected="false">Profile</a>
+                            aria-controls="other" aria-selected="false">Other</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="graphContainer" role="tabpanel"
-                        aria-labelledby="graphContainer-tab">
+                    <div class="tab-pane fade show active" id="model" role="tabpanel"
+                        aria-labelledby="model-tab">
+                        <div id="graphContainer" class="position-fixed h-100 w-100">
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">Something else
                     </div>
@@ -95,11 +126,6 @@ nav-area: home
                         </table>
                     </div>
                 </div>
-                <div id="modelOptions" class="card card-body mb-4 border-0">
-                    <h6>Model options</h6>
-                    <input type="checkbox" id="animate" checked="checked" /> Transitions
-                    <input type="checkbox" id="vertical" /> Vertical
-                </div>
             </div>
             <!-- /right sidebar -->
         </div>
@@ -145,7 +171,7 @@ nav-area: home
     <!-- /xml modal -->
 
     <!-- Modeller Code scripts loaded here-->
-    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/scripts2.js"></script>
 
     <!-- Bootstrap scripts loaded here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
