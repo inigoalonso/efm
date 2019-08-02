@@ -217,7 +217,13 @@ function addToolbarItem(graph, toolbar, prototype, image) {
     var funct = function (graph, evt, cell, x, y) {
         graph.stopEditing(false);
 
-        var vertex = graph.getModel().cloneCell(prototype);
+        try {
+            var vertex = graph.getModel().cloneCell(prototype);
+        }
+        catch {
+            console.log("There was an error making the vertex");
+            var vertex = prototype;
+        }
         vertex.geometry.x = x;
         vertex.geometry.y = y;
 
